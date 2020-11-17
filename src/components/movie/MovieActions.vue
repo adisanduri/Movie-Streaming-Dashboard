@@ -1,22 +1,22 @@
 <template>
-    <v-card-actions>
-        <v-row>
-            <v-col cols="2">
+    <v-row>
+        <v-col cols="1">
+            <v-row>
                 {{movie.download}}
                 <v-icon>
                     mdi-package-down
                 </v-icon>
-            </v-col>
+            </v-row>
+        </v-col>
 
-            <v-divider vertical />
+        <v-divider vertical />
 
-            <v-col cols="2">
-                <a :href="imdbUrl" target="_blank">
-                    <v-img max-width="50" :src="require('@/assets/imdb.png')"/>
-                </a>
-            </v-col>
-        </v-row>
-    </v-card-actions>
+        <v-col cols="2">
+            <a :href="imdbUrl" target="_blank">
+                <v-img max-width="50" :src="require('@/assets/imdb.png')"/>
+            </a>
+        </v-col>
+    </v-row>
 </template>
 
 <script>

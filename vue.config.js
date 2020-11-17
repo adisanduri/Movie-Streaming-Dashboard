@@ -1,8 +1,10 @@
+const API_SERVER_URL = "http://localhost:3000";
+
 module.exports = {
   "devServer": {
     "proxy": {
       "^/api": {
-        "target": "http://localhost:3000",
+        "target": API_SERVER_URL,
         "changeOrigin": true,
         "pathRewrite": {
           "^/api": ""

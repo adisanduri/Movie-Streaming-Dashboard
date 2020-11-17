@@ -1,32 +1,23 @@
 <template>
     <div>
-        <MovieTitle :title="movie.title"/>
-
-        <v-card-subtitle>
-            <RatingStars :movie-rating="movie.rating"/>
-            {{movie.released}} | {{movie.runtime}} | {{movie.type}}
-        </v-card-subtitle>
-
+        <MovieHeader :movie="movie"/>
         <v-divider/>
-
         <v-card-text v-html="movie.synopsis"/>
-
-        <MovieActions :movie="movie" />
-
+        <v-card-actions>
+            <MovieActions :movie="movie" />
+        </v-card-actions>
     </div>
 </template>
 
 <script>
-  import RatingStars from './RatingStars';
   import MovieActions from './MovieActions'
-  import MovieTitle from './MovieTitle'
+  import MovieHeader from './MovieHeader'
 
   export default {
     name: 'MovieDetails',
     components: {
-      MovieTitle,
+      MovieHeader,
       MovieActions,
-      RatingStars
     },
     props: {
       movie: Object,

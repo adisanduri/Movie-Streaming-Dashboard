@@ -1,24 +1,25 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { getField, updateField } from 'vuex-map-fields';
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    searchMovies: '',
-    categories: [],
-    filteredCategories: [],
+    filterMovies: '',
+    selectedCategories: [],
   },
   mutations: {
-    setSearchMovies(state, value) {
-      state.searchMovies = value;
+    updateField,
+    setFilterMovies(state, value) {
+      state.filterMovies = value;
     },
-    setCategories(state, value) {
-      state.searchMovies = value;
-    },
-    setFilteredCategories(state, value) {
-      state.filteredCategories = value;
+    setSelectedCategories(state, value) {
+      state.selectedCategories = value;
     }
+  },
+  getters: {
+    getField
   },
   actions: {
   },

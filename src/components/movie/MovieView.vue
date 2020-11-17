@@ -1,45 +1,41 @@
 <template>
-
     <div>
-        <v-card v-if="movie">
-            <v-row>
-                <v-col cols="5">
-                    <v-img :src="movie.largeimage"></v-img>
-                </v-col>
-                <v-col>
-                    <MovieDetails :movie="movie"/>
-                </v-col>
-            </v-row>
-        </v-card>
+        <v-row align="center" justify="center">
+            <v-col cols="10">
+                <v-card v-if="movie">
+                    <v-container>
+                    <v-row>
+                        <v-col cols="5">
+                            <v-img :src="movie.largeimage" class="rounded-lg"></v-img>
+                        </v-col>
+                        <v-col>
+                            <MovieDetails :movie="movie"/>
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+            </v-col>
+        </v-row>
     </div>
 </template>
 
 <script>
+  import MovieDetails from './MovieDetails';
+  import { getMovieById } from '../../services/movies';
 
-  import MovieDetails from './MovieDetails'
   export default {
     name: 'MovieView',
     components: { MovieDetails },
     data(){
       return {
-        movie_id: '',
+        movieId: '',
         movie: undefined,
       }
     },
     created() {
-      this.movie_id = this.$route.params.movie_id;
-      this.getMovie().then(response => {
-        this.movie=response[0];
-        this.imdbUrl += this.movie.imdbid;
-      });
+      this.movieId = this.$route.params.movieId;
+      getMovieById(this.movieId).then(response => this.movie = response);
     },
-    methods: {
-      async getMovie () {
-        const response = await fetch('/api/movies/'+ this.movie_id);
-        const movie = await response.json();
-        return movie;
-      }
-    }
   }
 </script>
 

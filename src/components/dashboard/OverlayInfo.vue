@@ -1,10 +1,5 @@
 <template>
-    <v-overlay
-            v-if="hover"
-            absolute
-            color="#FAFAFA"
-            class="text-center"
-    >
+    <div>
         <h3 class="black--text">{{movie.title}}</h3>
         <h5 class="black--text">{{movie.released}}</h5>
         <div v-if="movie.rating"
@@ -16,22 +11,20 @@
             </v-icon>
         </div>
 
-        <router-link :to="{name: 'movie', params: { movie_id : movie.id }}" class="without_underline">
+        <router-link :to="{name: 'movie', params: { movieId : movie.id }}" class="without_underline">
             <v-btn fab class="mx-2" small>
                 <v-icon>
                     mdi-arrow-right
                 </v-icon>
             </v-btn>
         </router-link>
-
-    </v-overlay>
+    </div>
 </template>
 
 <script>
   export default {
     name: 'OverlayInfo',
-    props :{
-      hover: Boolean,
+    props: {
       movie: Object,
     }
   }
