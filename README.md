@@ -2,6 +2,7 @@
 
 ## Requirements
 Vue.js +2.X (not 3)
+
 Node
 
 ## Project setup
