@@ -1,6 +1,14 @@
 # movie-streaming
 
+## Requirements
+Vue.js +2.X (not 3)
+
+Node
+
 ## Project setup
+First of all, you should clone this project - https://github.com/next-insurance/next-test (follow the instructions).
+Then :
+
 ```
 npm install
 ```
