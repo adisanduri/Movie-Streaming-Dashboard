@@ -1,10 +1,11 @@
 <template>
     <div>
         <FilterByCategory :categories="categories"/>
-
         <v-data-iterator
             :items="movies"
             :search="filterMovies"
+            :sort-by="sortBy"
+            :sort-desc="true"
             hide-default-footer
             no-results-text=""
         >
@@ -51,7 +52,8 @@
     computed: {
       ...mapState([
         'filterMovies',
-        'selectedCategories'
+        'selectedCategories',
+        'sortBy'
         ]),
       resultFilteredMovies() {
         return this.movies.filter((movie) =>

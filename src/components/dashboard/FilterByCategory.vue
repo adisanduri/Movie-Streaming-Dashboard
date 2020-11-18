@@ -12,8 +12,6 @@
 </template>
 
 <script>
-  //import { mapMutations } from 'vuex'
-
   import { mapFields } from 'vuex-map-fields';
 
   export default {

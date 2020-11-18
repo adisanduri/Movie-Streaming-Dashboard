@@ -7,13 +7,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     filterMovies: '',
+    sortBy: 'released',
     selectedCategories: [],
   },
   mutations: {
     updateField,
-    setFilterMovies(state, value) {
-      state.filterMovies = value;
-    },
     setSelectedCategories(state, value) {
       state.selectedCategories = value;
     }

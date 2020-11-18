@@ -7,7 +7,6 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
   routes: [
-
     { path: '/', component: Dashboard},
     { path: '/movies/:movieId', name: 'movie',component: MovieView},
   ],
