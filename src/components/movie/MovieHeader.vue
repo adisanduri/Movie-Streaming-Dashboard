@@ -19,7 +19,6 @@
 </template>
 
 <script>
-
   import RatingStars from './RatingStars';
 
   export default {
@@ -34,8 +33,5 @@
 </script>
 
 <style scoped>
-
-    .without_underline {
-        text-decoration: none;
-    }
+    @import './../../style/mainStyle.css';
 </style>

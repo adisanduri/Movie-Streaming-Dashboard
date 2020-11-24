@@ -2,7 +2,6 @@
     <v-hover v-slot="{ hover }">
         <v-card max-width="300">
             <v-img :src="movie.image" class="img-card" />
-
             <v-fade-transition>
                 <v-overlay
                         v-if="hover"
@@ -28,7 +27,6 @@
     components: {
       OverlayInfo
     }
-
   }
 </script>
 

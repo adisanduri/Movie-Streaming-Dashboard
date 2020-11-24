@@ -8,9 +8,7 @@
                 </v-icon>
             </v-row>
         </v-col>
-
         <v-divider vertical />
-
         <v-col cols="2">
             <a :href="imdbUrl" target="_blank">
                 <v-img max-width="50" :src="require('@/assets/imdb.png')"/>

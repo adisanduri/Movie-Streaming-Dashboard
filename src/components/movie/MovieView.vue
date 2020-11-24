@@ -22,6 +22,7 @@
 <script>
   import MovieDetails from './MovieDetails';
   import { getMovieById } from '../../services/movies';
+  import router from '@/router';
 
   export default {
     name: 'MovieView',
@@ -34,7 +35,9 @@
     },
     created() {
       this.movieId = this.$route.params.movieId;
-      getMovieById(this.movieId).then(response => this.movie = response);
+      getMovieById(this.movieId)
+        .then(response => this.movie = response)
+        .catch(() => router.push('/error'));
     },
   }
 </script>

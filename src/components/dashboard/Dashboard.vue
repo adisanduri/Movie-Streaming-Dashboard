@@ -27,7 +27,6 @@
             <v-img max-width="400" :src="require('@/assets/no-result-found.png')"/>
             <h2>No matching records found</h2>
         </v-row>
-
     </div>
 </template>
 
@@ -36,6 +35,7 @@
   import { getMovies, getCategories } from '../../services/movies'
   import MovieCard from './MovieCard'
   import FilterByCategory from './FilterByCategory'
+  import router from '@/router';
 
   export default {
     name: 'Dashboard',
@@ -53,7 +53,7 @@
       ...mapState([
         'filterMovies',
         'selectedCategories',
-        'sortBy'
+        'sortBy',
         ]),
       resultFilteredMovies() {
         return this.movies.filter((movie) =>
@@ -67,6 +67,8 @@
         this.movies = movies;
         this.categories = getCategories();
         this.setSelectedCategories(this.categories);
+      }).catch(() => {
+        router.push('/error');
       });
     },
     methods: {

@@ -14,7 +14,7 @@ export default new Vuex.Store({
     updateField,
     setSelectedCategories(state, value) {
       state.selectedCategories = value;
-    }
+    },
   },
   getters: {
     getField

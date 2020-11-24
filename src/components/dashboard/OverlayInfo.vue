@@ -10,7 +10,6 @@
                 mdi-star
             </v-icon>
         </div>
-
         <router-link :to="{name: 'movie', params: { movieId : movie.id }}" class="without_underline">
             <v-btn fab class="mx-2" small>
                 <v-icon>
@@ -31,7 +30,5 @@
 </script>
 
 <style scoped>
-    .without_underline {
-        text-decoration: none;
-    }
+    @import './../../style/mainStyle.css';
 </style>
