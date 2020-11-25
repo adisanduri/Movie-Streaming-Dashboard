@@ -33,11 +33,14 @@
         movie: undefined,
       }
     },
-    created() {
+    async created() {
       this.movieId = this.$route.params.movieId;
-      getMovieById(this.movieId)
-        .then(response => this.movie = response)
-        .catch(() => router.push('/error'));
+      try {
+        this.movie = await getMovieById(this.movieId);
+      }
+      catch {
+        router.push('/error');
+      }
     },
   }
 </script>

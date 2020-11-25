@@ -62,14 +62,15 @@
         );
       }
     },
-    created() {
-      getMovies().then(movies => {
-        this.movies = movies;
+    async created() {
+      try {
+        this.movies = await getMovies();
         this.categories = getCategories();
         this.setSelectedCategories(this.categories);
-      }).catch(() => {
+      }
+      catch {
         router.push('/error');
-      });
+      }
     },
     methods: {
       ...mapMutations([
