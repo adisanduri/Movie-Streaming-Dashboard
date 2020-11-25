@@ -38,7 +38,7 @@
       try {
         this.movie = await getMovieById(this.movieId);
       }
-      catch {
+      catch(e) {
         router.push('/error');
       }
     },

@@ -68,7 +68,7 @@
         this.categories = getCategories();
         this.setSelectedCategories(this.categories);
       }
-      catch {
+      catch(e) {
         router.push('/error');
       }
     },
